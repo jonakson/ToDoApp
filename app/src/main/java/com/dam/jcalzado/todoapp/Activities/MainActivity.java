@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         listViewTareas = (ListView) findViewById(R.id.listViewTareas);
         tareas = new ArrayList<>();
 
-        //imagenPrioridad = (ImageView) findViewById(R.id.imagenPrioridad);
-
         // Creamos/Abrimos la base de datos.
         TareaSQLiteHelper tareasHelper = new TareaSQLiteHelper(getApplicationContext());
         db = tareasHelper.getWritableDatabase();
@@ -49,13 +47,7 @@ public class MainActivity extends AppCompatActivity {
         listViewTareas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 lanzarActualizarTarea(view, position);
-
-                /*Intent i = new Intent(view.getContext(), ActualizarActivity.class);
-                Tarea t = (Tarea)adaptador.getItem(position);
-                i.putExtra("tareaID", t.getId());
-                startActivity(i);*/
             }
         });
 
